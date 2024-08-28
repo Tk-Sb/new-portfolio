@@ -1,9 +1,9 @@
-import MenuButton from "@/components/menu-button";
+import Menu from "@/components/menu";
 
 export default function page() {
   return (
     <>
-      <MenuButton></MenuButton>
+      <Menu></Menu>
     </>
   )
 }

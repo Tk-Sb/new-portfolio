@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react';
 import Link from "next/link";
+import Menu from './menu';
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
@@ -24,7 +25,7 @@ export default function Navbar() {
                 </div>
             </Link>
             
-            <button className="w-[64px] h-[58px]">UR menu btn</button>
+            <Menu></Menu>
         </div>
     )
 }
