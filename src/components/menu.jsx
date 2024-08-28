@@ -83,8 +83,8 @@ export default function Menu () {
               >
                 {navLinks.map((link, index) => {
                   return (
-                    <div dir="rtl" className="flex justify-start items-center overflow-hidden w-full h-[100px]">
-                      <MobileNavLink key={index} title={link.title} href={link.href} />
+                    <div key={index} dir="rtl" className="flex justify-start items-center overflow-hidden w-full h-[100px]">
+                      <MobileNavLink title={link.title} href={link.href} />
                     </div>
                   );
                 })}
