@@ -1,11 +1,19 @@
-import SwipeCarousel from "@/components/carousel";
 
-export default function Home() {
+import Home from "@/components/home";
+
+export default function App() {
   return (
-    <>
-      <div className="md:hidden">
-        <SwipeCarousel></SwipeCarousel>
-      </div>
-    </>
+      <main dir="rtl"> 
+        <section className="pt-[125px]">
+          <Home/>
+        </section>
+
+        {/* <section>
+          
+        </section> */}
+        
+        {/* it will be sections */}
+
+      </main>  
   );
 }
