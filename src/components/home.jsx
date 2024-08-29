@@ -1,3 +1,4 @@
+import PhoneAnimation from "./phone-animation";
 
 export default function Home () {
     return (
@@ -25,6 +26,7 @@ export default function Home () {
                     أعمالنا
                 </button>
             </div>
+            <PhoneAnimation></PhoneAnimation>
         </div>
     )
 }

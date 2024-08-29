@@ -1,9 +1,10 @@
 import Menu from "@/components/menu";
+import PhoneAnimation from "@/components/phone-animation";
 
 export default function page() {
   return (
     <>
-      <Menu></Menu>
+      <PhoneAnimation></PhoneAnimation>
     </>
   )
 }
