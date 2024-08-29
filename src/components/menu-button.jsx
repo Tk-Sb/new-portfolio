@@ -7,7 +7,7 @@ export default function MenuButton () {
   const [active, setActive] = useState(false);
   
   return (
-    <div className={`flex justify-end h-screen ${active? 'bg-[#8B5CF6]' : 'bg-transparent'} `}>
+    <div className={`fixed right-0 top-0 flex justify-end w-fit h-fit bg-transparent`}>
       <MotionConfig
         transition={{
           duration: 0.3,
@@ -18,7 +18,7 @@ export default function MenuButton () {
           initial={false}
           animate={active ? "open" : "closed"}
           onClick={() => setActive((pv) => !pv)}
-          className="relative h-20 w-20 rounded-full bg-white/0 transition-colors hover:bg-purple-400"
+          className="relative h-20 w-20 rounded-full bg-white/0 transition-colors"
         >
           <motion.span
             variants={VARIANTS.top}
