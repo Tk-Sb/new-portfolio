@@ -1,10 +1,9 @@
-import Menu from "@/components/menu";
-import PhoneAnimation from "@/components/phone-animation";
+import SwipeCarousel from "@/components/carousel";
 
 export default function page() {
   return (
     <>
-      <PhoneAnimation></PhoneAnimation>
+      <SwipeCarousel></SwipeCarousel>
     </>
   )
 }

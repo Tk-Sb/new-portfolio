@@ -14,14 +14,15 @@ const imgs = [
 ];
 
 const cards = [
-  { mainText: "Responsive design", secondLine: "(Screen width adaptation)", subText: "يأخذ الموقع الشكل المناسب ليظهر بالشكل الأمثل على جميع أنواع و أحجام الشاشات.", animation: "ojnAfdoinasd" },
-  { mainText: "UI/UX", secondLine: "(User Interface / User Experience)", subText: "يأخذ الموقع الشكل المناسب ليظهر بالشكل الأمثل على جميع أنواع و أحجام الشاشات.", animation: "ojnAfdoinasd" },
-  { mainText: "SPA", secondLine: "(Single Page Application)", subText: "سلاسة كبيرة في التنقل بين الصفحات تعطي سرعة في الأداء مما يزيد من تفاعل المستخدم مع التطبيق. (بالأخص على أجهزة الموبايل)", animation: "ojnAfdoinasd" },
+  { mainText: "Responsive design", secondLine: "(Screen width adaptation)", subText: "يأخذ الموقع الشكل المناسب ليظهر بالشكل الأمثل على جميع أنواع و أحجام الشاشات.", background: "/responsive.png" },
+  { mainText: "UI/UX", secondLine: "(User Interface / User Experience)", subText: "هوية بصرية خاصة بموقعك، مصممة لتعكس الجودة العالية، و مدروسة بناءاً على تجارب المستخدمين لتسهل تفاعل المستخدم مع الموقع.", background: "/ui-ux.png" },
+  { mainText: "SPA", secondLine: "(Single Page Application)", subText: "سلاسة كبيرة في التنقل بين الصفحات تعطي سرعة في الأداء مما يزيد من تفاعل المستخدم مع التطبيق. (بالأخص على أجهزة الموبايل)", background: "/ssr.png" },
+  { mainText: "SSR", secondLine: "(Server-Side Rendering)", subText: "يعمل موقعك بنسبة %90 على السيرفر الخاص بك، مما يرفع مستوى أمان و خصوصية البيانات ضمن التطبيق، كما يسهل عليك إدارة موقعك.", background: "/ssr.png" },
 ]
 
 
 const ONE_SECOND = 1000;
-const AUTO_DELAY = ONE_SECOND * 10;
+const AUTO_DELAY = ONE_SECOND * 100000;
 const DRAG_BUFFER = 50;
 
 const SPRING_OPTIONS = {
@@ -97,7 +98,7 @@ function Images ({ imgIndex }) {
           <motion.div
             key={id}
             style={{
-              backgroundImage: `url(/card-background.jpg)`,
+              backgroundImage: `url(${card.background})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
@@ -105,12 +106,9 @@ function Images ({ imgIndex }) {
               scale: imgIndex === id ? 0.95 : 0.85,
             }}
             transition={SPRING_OPTIONS}
-            className="aspect-auto w-screen shrink-0 rounded-xl text-white p-[15px] pb-[50px]"
+            className="aspect-square flex flex-col justify-end items-center w-screen shrink-0 text-white p-[15px] pb-[25px]"
           >
-            <div className="flex flex-col gap-[20px]">
-              <div className="w-full h-[150px] bg-slate-300 ">
-
-              </div>
+            <div className="flex flex-col gap-[15px]">
               
               <div>
                 <div className="text-[26px] font-bold">
