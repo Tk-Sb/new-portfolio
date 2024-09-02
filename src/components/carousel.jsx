@@ -2,22 +2,15 @@
 
 import { useEffect, useState } from "react";
 import { motion, useMotionValue } from "framer-motion";
-
-const imgs = [
-  "/imgs/nature/1.jpg",
-  "/imgs/nature/2.jpg",
-  "/imgs/nature/3.jpg",
-  "/imgs/nature/4.jpg",
-  "/imgs/nature/5.jpg",
-  "/imgs/nature/6.jpg",
-  "/imgs/nature/7.jpg",
-];
+import Rive from "./rive";
 
 const cards = [
-  { mainText: "Responsive design", secondLine: "(Screen width adaptation)", subText: "يأخذ الموقع الشكل المناسب ليظهر بالشكل الأمثل على جميع أنواع و أحجام الشاشات.", background: "/responsive.png" },
-  { mainText: "UI/UX", secondLine: "(User Interface / User Experience)", subText: "هوية بصرية خاصة بموقعك، مصممة لتعكس الجودة العالية، و مدروسة بناءاً على تجارب المستخدمين لتسهل تفاعل المستخدم مع الموقع.", background: "/ui-ux.png" },
-  { mainText: "SPA", secondLine: "(Single Page Application)", subText: "سلاسة كبيرة في التنقل بين الصفحات تعطي سرعة في الأداء مما يزيد من تفاعل المستخدم مع التطبيق. (بالأخص على أجهزة الموبايل)", background: "/ssr.png" },
-  { mainText: "SSR", secondLine: "(Server-Side Rendering)", subText: "يعمل موقعك بنسبة %90 على السيرفر الخاص بك، مما يرفع مستوى أمان و خصوصية البيانات ضمن التطبيق، كما يسهل عليك إدارة موقعك.", background: "/ssr.png" },
+  { mainText: "Responsive design", secondLine: "(Screen width adaptation)", subText: "يأخذ الموقع الشكل المناسب ليظهر بالشكل الأمثل على جميع أنواع و أحجام الشاشات", animation: "/responsive.riv" },
+  { mainText: "UI/UX", secondLine: "(User Interface / User Experience)", subText: "هوية بصرية خاصة بموقعك، مصممة لتعكس الجودة العالية، و مدروسة بناءاً على تجارب المستخدمين لتسهل تفاعل المستخدم مع الموقع", animation: "/UI-UX.riv" },
+  { mainText: "SPA", secondLine: "(Single Page Application)", subText: "سلاسة كبيرة في التنقل بين الصفحات تعطي سرعة في الأداء مما يزيد من تفاعل المستخدم مع التطبيق. (بالأخص على أجهزة الموبايل)", animation: "/spa.riv" },
+  { mainText: "SSR", secondLine: "(Server-Side Rendering)", subText: "يعمل موقعك بنسبة %90 على السيرفر الخاص بك، مما يرفع مستوى أمان و خصوصية البيانات ضمن التطبيق، كما يسهل عليك إدارة موقعك", animation: "/ssr.riv" },
+  { mainText: "SEO", secondLine: "(Search Engine Optimization)", subText: "بفضل ال SSR عالي الأداء يتم تحسين نتائج محركات البحث الذكية، مما يزيد من نسبة عثور المستخدمين على موقعك في أي مكان في العالم", animation: "/ssr.riv" },
+  { mainText: "CMS", secondLine: "(Content Management System)", subText: "تحكم بموقعك بالكامل عن طريق لوحة تحكم خاصة بك، تستطيع عن طريقها التعديل على التفاصيل في الموقع بخطوتين فقط", animation: "/ssr.riv" },
 ]
 
 
@@ -65,7 +58,7 @@ export default function SwipeCarousel () {
   };
 
   return (
-    <div className="relative overflow-hidden bg-transparent py-8">
+    <div className="relative overflow-hidden py-8">
       <motion.div
         drag="x"
         dragConstraints={{
@@ -98,7 +91,7 @@ function Images ({ imgIndex }) {
           <motion.div
             key={id}
             style={{
-              backgroundImage: `url(${card.background})`,
+              backgroundImage: `url(/card-background.jpg)`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
@@ -106,22 +99,21 @@ function Images ({ imgIndex }) {
               scale: imgIndex === id ? 0.95 : 0.85,
             }}
             transition={SPRING_OPTIONS}
-            className="aspect-square flex flex-col justify-end items-center w-screen shrink-0 text-white p-[15px] pb-[25px]"
+            className="aspect-square flex flex-col justify-end rounded-[15px] items-center w-[100vw] shrink-0 text-white p-[15px] pb-[25px]"
           >
             <div className="flex flex-col gap-[15px]">
-              
+              <div className="w-full flex justify-center items-center">
+                <Rive animation={card.animation}></Rive>
+              </div>
               <div>
                 <div className="text-[26px] font-bold">
                   {card.mainText}
                 </div>
-
                 <div className="text-[18px] font-bold">
                   {card.secondLine}
                 </div>
               </div>
-
-
-              <div className="text-[16px] text-right">
+              <div dir="rtl" className="text-[16px]">
                 {card.subText}
               </div>
             </div>
