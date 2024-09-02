@@ -10,7 +10,7 @@ export default function Rive({ animation }) {
   
   return (
     <>
-      <RiveComponent className="w-full h-[200px]"></RiveComponent>
+      <RiveComponent className="w-full h-[200px] md:h-[300px]"></RiveComponent>
     </>
   )
 }

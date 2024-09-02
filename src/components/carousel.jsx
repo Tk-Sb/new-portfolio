@@ -15,7 +15,7 @@ const cards = [
 
 
 const ONE_SECOND = 1000;
-const AUTO_DELAY = ONE_SECOND * 100000;
+const AUTO_DELAY = ONE_SECOND * 10;
 const DRAG_BUFFER = 50;
 
 const SPRING_OPTIONS = {
@@ -91,17 +91,15 @@ function Images ({ imgIndex }) {
           <motion.div
             key={id}
             style={{
-              backgroundImage: `url(/card-background.jpg)`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
+              background: "radial-gradient(100% 100% at 0% 0%, rgba(249, 206, 105, 0.85) 0%, rgba(139, 92, 246, 0.85) 44.59%, rgba(67, 44, 119, 0.85) 85%)",
             }}
             animate={{
               scale: imgIndex === id ? 0.95 : 0.85,
             }}
             transition={SPRING_OPTIONS}
-            className="aspect-square flex flex-col justify-end rounded-[15px] items-center w-[100vw] shrink-0 text-white p-[15px] pb-[25px]"
+            className="flex flex-col justify-end rounded-[15px] items-center w-[100vw] h-[450px] md:h-[550px] shrink-0 text-white"
           >
-            <div className="flex flex-col gap-[15px]">
+            <div className="flex flex-col gap-[15px] bg- w-full h-full p-[25px] pb-[50px]">
               <div className="w-full flex justify-center items-center">
                 <Rive animation={card.animation}></Rive>
               </div>
