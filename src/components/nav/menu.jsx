@@ -60,7 +60,7 @@ export default function Menu () {
   return (
     <div>
       <nav dir="rtl" className="flex justify-start items-center">
-        <div className="cursor-pointer w-fit h-fit z-10 lg:hidden text-md text-black" onClick={toggleMenu} >
+        <div className="cursor-pointer w-fit h-fit z-10 lg:hidden " onClick={toggleMenu} >
           <MenuButton></MenuButton>
         </div>
       </nav>
@@ -71,19 +71,19 @@ export default function Menu () {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="fixed left-0 top-0 w-[100vw] h-[100vh] origin-top bg-[#8B5CF6] text-black p-10"
+            className="fixed left-0 top-0 w-[100vw] h-[100vh] origin-top bg-[#8B5CF6] p-[25px] "
           >
-            <div className="flex h-full flex-col">
+            <div className="w-full h-full ">
               <motion.div
                 variants={containerVars}
                 initial="initial"
                 animate="open"
                 exit="initial"
-                className="flex flex-col h-full justify-center items-center gap-4 "
+                className="flex flex-col justify-start w-full h-full items-center gap-[10px] pt-[75px] "
               >
                 {navLinks.map((link, index) => {
                   return (
-                    <div key={index} dir="rtl" className="flex justify-start items-center overflow-hidden w-full h-[100px]">
+                    <div key={index} dir="rtl" className="flex justify-start items-center overflow-hidden w-full h-[100px] border-b-2 border-b-[#8F8F8F] hover:border-b-white active:border-b-white transition-colors duration-500 ">
                       <MobileNavLink title={link.title} href={link.href} />
                     </div>
                   );
@@ -118,7 +118,7 @@ function MobileNavLink ({ title, href }) {
   return (
     <motion.div
       variants={mobileLinkVars}
-      className="flex justify-center items-center text-4xl text-white h-full"
+      className="flex justify-start w-full h-full items-center text-4xl text-[#d4d4d4] hover:text-white transition-colors duration-500 "
     >
       <div>
         <Link href={href}>{title}</Link>

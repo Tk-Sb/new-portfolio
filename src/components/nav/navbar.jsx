@@ -1,5 +1,7 @@
 'use client'
+
 import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import Link from "next/link";
 import Menu from './menu';
 
@@ -18,14 +20,13 @@ export default function Navbar() {
     }, []);
     
     return (
-        <div className={`${scrolled? `bg-slate-100 bg-opacity-90`: ``} fixed flex flex-row-reverse justify-between items-start w-[100vw] h-[75px] py-[15px] px-[25px]`}>
+        <motion.div className={`${scrolled? `bg-purple-400 bg-opacity-30 backdrop-blur-lg `: `bg-transparent`} fixed flex flex-row-reverse justify-between items-center w-[100vw] h-[75px] px-[25px] transition-colors duration-300`}>
             <Link href={'#'}>
-                <div className="flex items-center w-fit h-[40px] text-[#F9CE69] text-[48px] font-bold">
+                <div className="w-fit h-fit text-[#F9CE69] text-[48px] font-bold">
                     TP
                 </div>
             </Link>
-            
             <Menu></Menu>
-        </div>
+        </motion.div>
     )
 }

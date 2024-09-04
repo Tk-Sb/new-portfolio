@@ -22,17 +22,17 @@ export default function MenuButton () {
         >
           <motion.span
             variants={VARIANTS.top}
-            className="absolute h-1 w-10 bg-black"
+            className={`absolute h-1 w-9 ${active? 'bg-white duration-500' : 'bg-black duration-[2000ms]'} transition-colors `}
             style={{ y: "-50%", left: "50%", x: "-50%", top: "35%" }}
           />
           <motion.span
             variants={VARIANTS.middle}
-            className="absolute h-1 w-10 bg-black"
+            className={`absolute h-1 w-9 ${active? 'bg-white duration-500' : 'bg-black duration-[2000ms]'} transition-colors `}
             style={{ left: "50%", x: "-50%", top: "50%", y: "-50%" }}
           />
           <motion.span
             variants={VARIANTS.bottom}
-            className="absolute h-1 w-5 bg-black"
+            className={`absolute h-1 w-4 ${active? 'bg-white duration-500' : 'bg-black duration-[2000ms]'} transition-colors `}
             style={{
               x: "-50%",
               y: "50%",
