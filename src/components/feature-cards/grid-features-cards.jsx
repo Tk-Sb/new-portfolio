@@ -125,7 +125,7 @@ const FeatureCard = ({ onMouseEnter, onMouseLeave, cards, autoplay }) => {
                 <p className="text-[28px] font-bold text-center w-full">
                   {card.mainText}
                 </p>
-                <p dir="ltr" className="text-[18px] text-center text-[#8F8F8F] font-bold w-full">
+                <p dir="ltr" className="text-[18px] text-center text-[#8F8F8F] font-medium w-full">
                   {card.secondLine}
                 </p>
               </div>

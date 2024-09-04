@@ -18,11 +18,11 @@ export default function Home () {
                 </p>
             </div>
             <div className="flex gap-[15px]">
-                <button className="w-[125px] h-[50px] flex justify-center items-center rounded-[15px] border-[2px] border-[#143EEA] bg-[#143EEA] font-bold text-white transition-all duration-200 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:shadow-none">
+                <button className="w-[125px] h-[50px] flex justify-center items-center rounded-[15px] border-[2px] border-[#143EEA] bg-[#143EEA] font-medium text-white transition-all duration-200 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:shadow-none">
                     تواصل معنا
                 </button>
                 
-                <button className="w-[125px] h-[50px] flex justify-center items-center rounded-[15px] border-[2px] border-[#143EEA] bg-transparent font-bold text-[#143EEA] transition-all duration-200 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:shadow-none">
+                <button className="w-[125px] h-[50px] flex justify-center items-center rounded-[15px] border-[2px] border-[#143EEA] bg-transparent font-medium text-[#143EEA] transition-all duration-200 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:shadow-none">
                     أعمالنا
                 </button>
             </div>
