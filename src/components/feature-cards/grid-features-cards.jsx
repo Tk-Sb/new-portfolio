@@ -2,16 +2,31 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Rive from "../rive";
 
-export default function Cursor() {
+
+export default function GridFeaturesCards ({ cards, autoplay }) {
+  const [cursorVisible, setCursorVisible] = useState(false);
+
+  const handleMouseEnter = () => {
+    setCursorVisible(true);
+  };
+
+  const handleMouseLeave = () => {
+    setCursorVisible(false);
+  };
+
   return (
-    <div className="h-screen text-center py-20">
-      <CustomCursorCard2></CustomCursorCard2>
+    <div className="flex justify-center w-screen h-fit p-[25px] ">
+      <CustomCursor isVisible={cursorVisible} />
+      <div className="p-0">
+        <FeatureCard onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} cards={cards} />
+      </div>
     </div>
   );
-}
+};
 
-const CustomCursor2 = ({ isVisible }) => {
+function CustomCursor ({ isVisible }) {
   const [position, setPosition] = useState({ x: -100, y: -100 });
 
   useEffect(() => {
@@ -90,40 +105,36 @@ const CustomCursor2 = ({ isVisible }) => {
   );
 };
 
-const CustomCard2 = ({ onMouseEnter, onMouseLeave }) => {
+const FeatureCard = ({ onMouseEnter, onMouseLeave, cards, autoplay }) => {
+  
   return (
-    <a
-      href="#"
-      className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 cursor-none"
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
-      <img className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="https://res.cloudinary.com/dl2adjye7/image/upload/v1716789479/abstract-technology-concept-background-vertical-d-illustration-81690352_dnidkh.webp" alt="Noteworthy technology acquisitions 2021" />
-      <div className="flex flex-col justify-between p-4 leading-normal">
-        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-      </div>
-    </a>
-  );
-};
-
-const CustomCursorCard2 = () => {
-  const [cursorVisible, setCursorVisible] = useState(false);
-
-  const handleMouseEnter = () => {
-    setCursorVisible(true);
-  };
-
-  const handleMouseLeave = () => {
-    setCursorVisible(false);
-  };
-
-  return (
-    <div className="relative">
-      <CustomCursor2 isVisible={cursorVisible} />
-      <div className="p-0">
-        <CustomCard2 onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} />
-      </div>
+    <div className="flex flex-wrap max-w-[1100px] h-fit gap-[25px] ">
+      {cards.map((card, i) => {
+        return (
+          <motion.div 
+            key={i} 
+            className="flex flex-col w-fit h-fit rounded-[20px] "
+            whileHover={{ scale: 1.05, rotate: 1, boxShadow: "5px 5px 0px 0px rgba(109, 40, 217, 1)" }}  // shadow-[5px_5px_0px_0px_rgba(109,40,217)]
+            transition={{ duration: 0.3 }} 
+            >
+            <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} style={{background: "radial-gradient(100% 100% at 0% 0%, rgba(249, 206, 105, 0.85) 0%, rgba(139, 92, 246, 0.85) 44.59%, rgba(67, 44, 119, 0.85) 85%)"}} className="w-[350px] h-[300px] rounded-t-[15px] cursor-none">
+              <Rive animation={card.animation} autoplay={autoplay}></Rive>
+            </div>
+            <div dir="rtl" className="flex flex-col gap-[20px] text-white w-[350px] h-[250px] p-[25px] bg-[#2B2836] rounded-b-[15px] ">
+              <div>
+                <p className="text-[28px] font-bold text-center w-full">
+                  {card.mainText}
+                </p>
+                <p dir="ltr" className="text-[18px] text-center text-[#8F8F8F] font-bold w-full">
+                  {card.secondLine}
+                </p>
+              </div>
+              <p className="text-[18px] text-[#C6C6C6] w-full">
+                {card.subText}
+              </p>
+            </div>
+          </motion.div>
+        )})}
     </div>
   );
 };

@@ -1,4 +1,5 @@
-import Rive from "./rive";
+import GridFeaturesCards from "./grid-features-cards";
+import SwipeCarousel from "./swipe-carousel";
 
 const cards = [
   { mainText: "Responsive design", secondLine: "(Screen width adaptation)", subText: "يأخذ الموقع الشكل المناسب ليظهر بالشكل الأمثل على جميع أنواع و أحجام الشاشات", animation: "/responsive.riv" },
@@ -9,25 +10,16 @@ const cards = [
   { mainText: "CMS", secondLine: "(Content Management System)", subText: "تحكم بموقعك بالكامل عن طريق لوحة تحكم خاصة بك، تستطيع عن طريقها التعديل على التفاصيل في الموقع بخطوتين فقط", animation: "/cms.riv" },
 ]
 
-export default function FeatureCard() {
-
-	return (
+export default function FeatureCards() {
+  
+  return (
     <>
-      <div className="flex flex-col w-fit h-fit">
-        <div className="w-[350px] h-[350px]">
-          <Rive animation={cards[0].animation}></Rive>
-        </div>
-        <div dir="rtl"  className="flex flex-col items-center text-white w-[350px] h-[250px] gap-[15px] p-[25px] bg-gradient-to-tr from-gray-900 to-slate-700">
-          <p dir="ltr" className="text-[24px] font-bold w-full">
-            {cards[0].mainText}
-            <br />
-            {cards[0].secondLine}
-          </p>
-          <p className="text-[18px] w-full">
-            {cards[0].subText}
-          </p>
-        </div>
+      <div className="hidden md:block">
+        <GridFeaturesCards cards={cards} autoplay={false} ></GridFeaturesCards>
+      </div>
+      <div className="md:hidden">
+        <SwipeCarousel cards={cards} autoplay={true}></SwipeCarousel>
       </div>
     </>
-  );
+  )
 }

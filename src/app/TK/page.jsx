@@ -1,15 +1,9 @@
-import SwipeCarousel from "@/components/carousel";
-import Cursor from "@/components/cursor";
-import FeatureCard from "@/components/feature-card";
-import Rive from "@/components/rive";
+import FeatureCards from "@/components/feature-cards/feature-cards";
 
 export default function page() {
   return (
     <>
-      <div className="p-[25px]">
-        <FeatureCard></FeatureCard>
-      </div>
-      {/* <SwipeCarousel></SwipeCarousel> */}
+      <FeatureCards></FeatureCards>
     </>
   )
 }
