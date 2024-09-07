@@ -113,7 +113,7 @@ export default function AnimatedBeam() {
   );
 }
 
-const Circle = forwardRef(({ className, children }, ref) => {
+const Circle = forwardRef(function Circle({ className, children }, ref) {
   return (
     <div
       ref={ref}
