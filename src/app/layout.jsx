@@ -1,5 +1,7 @@
 import { Rubik } from "next/font/google";
 import "./globals.css";
+import { Providers } from "./providers";
+import ThemeSwitch from "@/components/themeSwitch";
 
 const rubik = Rubik({ subsets: ["arabic"] })
 
@@ -10,9 +12,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ar">
-      <body className={`${rubik.className} bg-[#FBFBFB] h-[2000px] overflow-x-hidden `}>
+    <html lang="ar" suppressHydrationWarning>
+      <body className={`${rubik.className} bg-[#FBFBFB] dark:bg-black h-[2000px] overflow-x-hidden `}>
+        <Providers>  
         {children}
+        </Providers>
       </body>
     </html>
   );
