@@ -18,7 +18,7 @@ export default function App() {
 
         <div className="hidden md:block h-[2px] w-[85%] mt-[80px] bg-[#00000040]"/>
         
-        <section className="flex flex-col">
+        <section>
           <Services/>
         </section>
         {/* <section>
@@ -27,6 +27,6 @@ export default function App() {
         
         {/* it will be sections */}
       </main> 
-      </>   
+    </>   
   );
 }
