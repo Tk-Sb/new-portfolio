@@ -60,7 +60,7 @@ export default function Menu () {
   return (
     <div>
       <nav dir="rtl" className="flex justify-start items-center">
-        <div className="cursor-pointer w-fit h-fit z-10 lg:hidden " onClick={toggleMenu} >
+        <div className="cursor-pointer w-fit h-fit z-10" onClick={toggleMenu} >
           <MenuButton></MenuButton>
         </div>
       </nav>
