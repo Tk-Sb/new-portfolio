@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 .header-font {
-    @apply text-[36px] font-bold md:text-[42px] lg:text-[48px]; 
+    @apply text-[36px] md:text-[42px] lg:text-[48px] font-bold; 
 }
 .subHeader-font{
     @apply text-[16px] md:text-[18px] lg:text-[20px];
