@@ -2,15 +2,21 @@
 
 import { useRef } from "react";
 import { motion, useMotionTemplate, useMotionValue, useSpring } from "framer-motion";
-import { FiMousePointer } from "react-icons/fi";
 
 export default function HoverCard() {
   return (
     <>
-      <div className="flex justify-center w-full py-12 ">
-        <TiltCard background={"Home-page-mobile.png"} />
-        <TiltCard background={"About-us-page-mobile.png"} />
-        <TiltCard />
+      <div className="flex justify-center w-full h-fit ">
+        <div className="flex justify-center flex-wrap gap-3 -rotate-6 min-w-[750px] h-fit scale-[0.47] md:scale-100 ">
+          <div>
+            <TiltCard background={"Home-page-mobile.png"} m={"mt-[50px]"} />
+            <TiltCard background={"mall-mobile.png"} m={"mt-[25px]"} />
+          </div>
+          <div>
+            <TiltCard background={"About-us-page-mobile.png"} />
+            <TiltCard background={"boxing-mobile.png"} m={"mt-[25px]"} />
+          </div>
+        </div>
       </div>
     </>
   )
@@ -19,7 +25,7 @@ export default function HoverCard() {
 const ROTATION_RANGE = 32.5;
 const HALF_ROTATION_RANGE = 32.5 / 2;
 
-const TiltCard = ({ background }) => {
+const TiltCard = ({ background, m }) => {
   const ref = useRef(null);
 
   const x = useMotionValue(0);
@@ -63,7 +69,7 @@ const TiltCard = ({ background }) => {
         transformStyle: "preserve-3d",
         transform,
       }}
-      className="relative h-[550px] w-72 rounded-xl "
+      className={`relative h-[550px] w-72 rounded-xl ${m} `}
     >
       <div
         style={{
@@ -74,7 +80,7 @@ const TiltCard = ({ background }) => {
           transform: "translateZ(75px)",
           transformStyle: "preserve-3d",
         }}
-        className="absolute inset-4 grid place-content-center rounded-xl bg-transparent shadow-lg"
+        className="absolute inset-4 grid place-content-center rounded-xl shadow-lg"
       >
       </div>
     </motion.div>
