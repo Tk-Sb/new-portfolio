@@ -1,23 +1,24 @@
-import HoverCard from "./hover-card/hover-card";
+import AnimatedBeam from "./animated-beam/animated-beam";
 
-
-export default function Works() {
+export default function Tools() {
     return (
         <div className="flex flex-col gap-[25px] w-fit h-fit ">
             <div className="px-[25px] lg:px-[50px] flex flex-col gap-[10px] w-fit h-fit"> 
                 <p className="w-fit h-fit header-font ">
-                نجاحنا في تحويل 
+                أفضل تنقنيات و أدوات
                 <br/>
-                خيالك
+                التصميم و البرمجة
                 <br/>
-                إلى واقع رقمي
+                في خدمتك
                 </p>
                 <p className="w-fit h-fit subHeader-font ">
-                إليك نبذة من مشاريعنا السابقة.
+                تشكيلة عالية المستوى من لغات البرمجة و تطبيقات التصميم
+                <br/>
+                جاهزة لبناء تطبيقك التالي.
                 </p>
             </div>
             <div className="w-screen">
-                <HoverCard/>
+                <AnimatedBeam/>
             </div>
         </div>
     )
