@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ar" suppressHydrationWarning>
-      <body className={`${rubik.className} bg-[#FBFBFB] dark:bg-black h-[2000px] overflow-x-hidden `}>
+      <body className={`${rubik.className} bg-[#FBFBFB] dark:bg-black overflow-x-hidden `}>
         <Providers>  
         {children}
         </Providers>
