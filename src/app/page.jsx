@@ -32,9 +32,9 @@ export default function App() {
 
         <div className="hidden md:block h-[2px] w-[85%] mt-[80px] bg-[#00000040]"/>
 
-        <section className="pt-[100px]">
+        {/* <section className="pt-[100px]">
           <Tools/>
-        </section>
+        </section> */}
 
         {/* <section>
           

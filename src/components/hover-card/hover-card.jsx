@@ -6,16 +6,14 @@ import { motion, useMotionTemplate, useMotionValue, useSpring } from "framer-mot
 export default function HoverCard() {
   return (
     <>
-      <div className="flex justify-center w-full h-fit ">
-        <div className="flex justify-center flex-wrap gap-3 -rotate-6 min-w-[750px] h-fit scale-[0.47] md:scale-100 ">
-          <div>
-            <TiltCard background={"Home-page-mobile.png"} m={"mt-[50px]"} />
-            <TiltCard background={"mall-mobile.png"} m={"mt-[25px]"} />
-          </div>
-          <div>
-            <TiltCard background={"About-us-page-mobile.png"} />
-            <TiltCard background={"boxing-mobile.png"} m={"mt-[25px]"} />
-          </div>
+      <div className="flex justify-center gap-3 w-fit h-fit ">
+        <div>
+          <TiltCard background={"Home-page-mobile.png"} m={"mt-[50px]"} />
+          <TiltCard background={"mall-mobile.png"} m={"mt-[25px]"} />
+        </div>
+        <div>
+          <TiltCard background={"About-us-page-mobile.png"} />
+          <TiltCard background={"boxing-mobile.png"} m={"mt-[25px]"} />
         </div>
       </div>
     </>
@@ -69,7 +67,7 @@ const TiltCard = ({ background, m }) => {
         transformStyle: "preserve-3d",
         transform,
       }}
-      className={`relative h-[550px] w-72 rounded-xl ${m} `}
+      className={`relative aspect-[0.52363636] w-36 md:w-72 rounded-[15px] md:rounded-[20px] ${m} `}
     >
       <div
         style={{
@@ -80,7 +78,7 @@ const TiltCard = ({ background, m }) => {
           transform: "translateZ(75px)",
           transformStyle: "preserve-3d",
         }}
-        className="absolute inset-4 grid place-content-center rounded-xl shadow-lg"
+        className="absolute inset-[10px] md:inset-[15px] grid place-content-center rounded-[10px] md:rounded-[15px] shadow-lg"
       >
       </div>
     </motion.div>
