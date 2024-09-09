@@ -2,7 +2,7 @@ import PhoneAnimation from "./phone-animation";
 
 export default function Home () {
     return (
-        <div className="md:flex justify-between md:w-screen">
+        <div className="md:flex justify-between md:w-screen ">
             <div className="flex flex-col gap-[25px] w-fit h-fit px-[25px] md:px-[50px]">
                 <div className="flex flex-col gap-[10px] md:gap[15px] max-w-[360px] h-fit"> 
                     <p className="w-fit h-fit md:h-[153px] header-font font-bold leading-[44px] md:leading-[50px]">
