@@ -21,14 +21,12 @@ export default function Navbar() {
     }, []);
     
     return (
-        <motion.div className={`${scrolled? `bg-purple-400 bg-opacity-30 backdrop-blur-lg `: `bg-transparent`} lg:bg-[#8B5CF680] fixed flex flex-row-reverse justify-between items-center w-[100vw] h-[75px] px-[25px] lg:pr-[100px] transition-colors duration-300`}>
+        <motion.div className={`${scrolled? `bg-purple-400 bg-opacity-30 backdrop-blur-lg `: `bg-transparent`} lg:bg-[#8B5CF680] flex flex-row-reverse justify-between items-center w-full h-[75px] transition-colors duration-300 z-20 fixed right-0 top-0 `}>
             <Link href={'#'}>
-                <div className="w-fit h-fit text-[#F9CE69] text-[48px] font-bold">
+                <div className="w-fit h-fit text-[#F9CE69] text-[48px] font-bold pl-[25px] ">
                     TP
                 </div>
             </Link>
-
-            <ThemeSwitch/>
 
             <div className={`${scrolled? `lg:hidden`: ``} hidden lg:flex items-center gap-[50px] w-fit text-[24px]`}>
                 <Link href={'#'}><p>الرئيسية</p></Link>
@@ -38,7 +36,7 @@ export default function Navbar() {
                 <Link href={'#'}><p>تواصل معنا</p></Link>
             </div>
             <div className={`${scrolled? ``: `lg:hidden`}`}>
-            <Menu></Menu>
+                <Menu></Menu>
             </div>
             
             

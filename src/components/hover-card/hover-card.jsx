@@ -67,7 +67,7 @@ const TiltCard = ({ background, m }) => {
         transformStyle: "preserve-3d",
         transform,
       }}
-      className={`relative aspect-[0.52363636] w-36 md:w-72 rounded-[15px] md:rounded-[20px] ${m} `}
+      className={`relative aspect-[0.52363636] w-36 md:w-72 rounded-[8px] md:rounded-[10px] ${m} `}
     >
       <div
         style={{
@@ -78,7 +78,7 @@ const TiltCard = ({ background, m }) => {
           transform: "translateZ(75px)",
           transformStyle: "preserve-3d",
         }}
-        className="absolute inset-[10px] md:inset-[15px] grid place-content-center rounded-[10px] md:rounded-[15px] shadow-lg"
+        className="absolute inset-[8px] md:inset-[15px] grid place-content-center rounded-[5px] md:rounded-[10px] shadow-lg"
       >
       </div>
     </motion.div>

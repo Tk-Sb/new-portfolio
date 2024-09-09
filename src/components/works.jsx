@@ -16,7 +16,7 @@ export default function Works() {
                 إليك نبذة من مشاريعنا السابقة.
                 </p>
             </div>
-            <div className="w-fit px-[25px] ">
+            <div className="w-fit px-[25px] md:px-[50px] ">
                 <HoverCard/>
             </div>
         </div>

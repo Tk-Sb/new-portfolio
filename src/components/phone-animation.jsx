@@ -5,7 +5,7 @@ import { FiBatteryCharging, FiWifi } from "react-icons/fi";
 
 export default function PhoneAnimation () {
   return (
-    <section className="bg-transparent">
+    <section className="">
       <FloatingPhone />
     </section>
   );

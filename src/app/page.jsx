@@ -1,4 +1,5 @@
 
+import AnimatedBeam from "@/components/animated-beam/animated-beam";
 import FeatureCards from "@/components/feature-cards/feature-cards";
 import Home from "@/components/home";
 import Navbar from "@/components/nav/navbar";
@@ -10,37 +11,38 @@ export default function App() {
   return (
     <>
       
-      <main dir="rtl" className="flex justify-start items-start md:items-center flex-col gap-[50px]">
-        <nav className="w-[100vw] h-[75px] z-10">
-          <Navbar></Navbar>
-        </nav>
+      <nav dir="rtl" className="w-full h-[75px] z-10">
+        <Navbar></Navbar>
+      </nav>
+      <main dir="rtl" className="flex flex-col justify-start gap-[100px] ">
+
+        <section className="px-[25px] lg:px-[50px] ">
+          <Home></Home>
+        </section>
+
         <section>
-          <Home/>
-        </section>
-
-        <div className="hidden md:block h-[2px] w-[85%] mt-[80px] bg-[#00000040]"/>
-        
-        <section className="pt-[100px]">
-          <Services/>
-        </section>
-
-        <div className="hidden md:block h-[2px] w-[85%] mt-[80px] bg-[#00000040]"/>
-
-        <section className="pt-[100px]">
-          <Works/>
-        </section>
-
-        <div className="hidden md:block h-[2px] w-[85%] mt-[80px] bg-[#00000040]"/>
-
-        {/* <section className="pt-[100px]">
-          <Tools/>
-        </section> */}
-
-        {/* <section>
+          <div className="px-[25px] lg:px-[50px] ">
+            <Services></Services>
+          </div>
           
-          </section> */}
+          <div dir="ltr">
+            <FeatureCards/>
+          </div>
+        </section>
+
+        <section>
+          <Works></Works>
+        </section>
+
+        <section className="px-[25px] lg:px-[50px] ">
+          <div>
+            <Tools></Tools>
+          </div>
+          <div dir="ltr" className="w-full">
+            <AnimatedBeam/>
+          </div>
+        </section>
         
-        {/* it will be sections */}
       </main> 
     </>   
   );

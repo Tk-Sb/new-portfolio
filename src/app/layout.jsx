@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="ar" suppressHydrationWarning>
       <body className={`${rubik.className} bg-[#FBFBFB] dark:bg-black overflow-x-hidden `}>
         <Providers>  
-        {children}
+          {children}
         </Providers>
       </body>
     </html>

@@ -4,8 +4,8 @@ import FeatureCards from "./feature-cards/feature-cards";
 export default function Services() {
   return (
     <>
-      <div className="flex flex-col gap-[25px] w-fit h-fit ">
-        <div className="px-[25px] lg:px-[50px] flex flex-col gap-[10px] w-fit h-fit"> 
+      <div className="flex flex-col gap-[25px] w-full h-fit ">
+        <div className="flex flex-col gap-[10px] w-fit h-fit"> 
           <p className="w-fit h-fit header-font ">
             أفضل الحلول
             <br/>
@@ -18,9 +18,6 @@ export default function Services() {
             <br />
             باستخدام أحدث أدوات التصميم و البرمجة.
           </p>
-        </div>
-        <div dir="ltr" className="w-screen flex flex-col">
-          <FeatureCards/>
         </div>
       </div>
     </>

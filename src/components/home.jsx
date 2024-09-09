@@ -2,17 +2,17 @@ import PhoneAnimation from "./phone-animation";
 
 export default function Home () {
     return (
-        <div className="md:flex justify-between md:w-screen ">
-            <div className="flex flex-col gap-[25px] w-fit h-fit px-[25px] md:px-[50px]">
-                <div className="flex flex-col gap-[10px] md:gap[15px] max-w-[360px] h-fit"> 
-                    <p className="w-fit h-fit md:h-[153px] header-font font-bold leading-[44px] md:leading-[50px]">
+        <div className="flex flex-wrap gap-[25px] w-full h-fit ">
+            <div className="flex flex-col gap-[25px] w-fit h-fit ">
+                <div className="flex flex-col gap-[10px] md:gap[15px] w-fit h-fit"> 
+                    <p className="w-fit h-fit header-font font-bold ">
                         انقل اسمك
                         <br/> 
                         إلى 
                         <br/>
                         المستوى التالي 
                     </p>
-                    <p className="w-fit h-fit md:w-[342px] md:h-[60px] subHeader-font leading-[25px] md:leading-[30px]">
+                    <p className="w-fit h-fit subHeader-font ">
                         دليلك في العالم الرقمي سريع التغير
                         <br/>
                         نساعدك لإثبات حضورك في عالم الإنترنت.
@@ -28,9 +28,9 @@ export default function Home () {
                     </button>
                 </div>
             </div>
-                <div className="flex flex-grow justify-center h-fit pt-[25px] md:pt-[0px] ">
-                    <PhoneAnimation></PhoneAnimation>
-                </div>
+            <div className="flex flex-grow justify-center h-fit ">
+                <PhoneAnimation></PhoneAnimation>
+            </div>
         </div>
         
     )
