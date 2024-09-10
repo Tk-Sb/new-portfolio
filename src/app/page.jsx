@@ -1,4 +1,3 @@
-
 import AnimatedBeam from "@/components/animated-beam/animated-beam";
 import FeatureCards from "@/components/feature-cards/feature-cards";
 import Home from "@/components/home";
@@ -10,8 +9,7 @@ import Works from "@/components/works";
 export default function App() {
   return (
     <>
-      
-      <nav dir="rtl" className="w-full h-[75px] z-10">
+      <nav dir="rtl" className="w-full h-[75px] z-10 lg:mb-[50px] ">
         <Navbar></Navbar>
       </nav>
       <main dir="rtl" className="flex flex-col justify-start gap-[100px] ">
